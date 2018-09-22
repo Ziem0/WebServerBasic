@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Poor+Story|Spirax');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle closest-side, darksalmon, cornflowerblue);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: chocolate;
+    padding: 15px;
+    font-family: 'Poor Story', cursive;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h2 {
+    transform: rotate(3deg);
+    box-shadow: cornflowerblue 5px 5px 5px 5px;
+    background: darksalmon;
+}
+
+nav h2:hover {
+    background-color: blue;
+    transform: rotate(0deg);
+    transition: all blue 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+nav ul li a {
+    font-size: 2em;
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: gainsboro;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+    border: black inset thick ;
+}
+
+@media all and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        border-bottom-right-radius: 200px;
+        border-bottom-left-radius: 100px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        margin-top: 50px;
+    }
+    .records {
+        margin-top: 50px;
+    }
+    footer {
+        margin-top: 50px;
+    }
+}
+
+@media all and (min-width: 601px) {
+    .content {
+        display: grid;
+        grid-template-areas: "title title title" ". records ." "foot foot foot";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 2.7fr;
+        grid-gap: 50px;
+    }
+
+    .content2 {
+        display: grid;
+        grid-template-areas: "form" "foot";
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 30px;
+        grid-gap: 10px;
+    }
+}
+
+/*grid referrals*/
+form {
+    grid-area: form;
+    background-color: rgba(220, 220, 220, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    padding: 20px;
+}
+
+form input, textarea{
+    margin: 15px;
+}
+
+.title {
+    grid-area: title;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.records {
+    grid-area: records;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    grid-area: foot;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), cornflowerblue);
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    padding: 10px;
+    position: page;
+    bottom: 0;
+    width: 100%;
+
+}
